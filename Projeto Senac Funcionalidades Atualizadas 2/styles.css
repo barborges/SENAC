@@ -1,0 +1,174 @@
+body {
+   font-family: 'Garamond', serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+  }
+
+  h1, h2, h3, p, input, button {
+    font-family: 'Garamond', serif;
+  }
+  
+  input[type="text"] {
+    padding: 8px;
+    margin-right: 10px;
+  }
+  
+  button {
+    padding: 8px 16px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .results {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #000000;
+  }
+
+  
+ 
+.featured-places {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .initial-places {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .place-item {
+    display: inline-block;
+    margin: 0 10px;
+    text-align: center;
+    border: 1px solid #000000;
+    padding: 10px;
+    width: 220px;
+  }
+  
+  .place-item img {
+    display: block;
+    width: 200px;
+    height: 150px; 
+    object-fit: cover;
+    border-bottom: 1px solid #000000;
+    margin-bottom: 10px;
+  }
+  
+  .place-item p {
+    margin-top: 5px;
+    font-weight: bold;
+  }
+
+  #mainTitle {
+    float: none; 
+    text-align: left; 
+  }
+  
+  /* Estilos para os banners */
+  .banners {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .banner {
+    text-align: center;
+    width: 30%;
+    padding: 0; 
+    border: none; 
+    background: none; 
+  }
+  
+  .banner img {
+    width: 33%;
+    max-width: 100%; 
+    height: auto;
+    border: 1px solid #000;
+    max-height: 100%; 
+    display: block;
+    margin: 0 auto; 
+  }
+  
+  .banner h3 {
+    margin-top: 5px;
+    font-size: 12px; 
+    font-weight: bold;
+    text-transform: capitalize;
+    color: black;
+  }
+  
+  
+  header p {
+    font-weight: bold;
+  }
+
+  .results-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .result-item {
+    width: 200px; 
+    margin: 10px;
+    text-align: center;
+  }
+  
+  .result-item img {
+    width: 100%;
+    height: auto;
+  }
+
+  .results-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .results-container > div {
+    flex: 0 0 48%;
+    margin: 10px;
+    text-align: center;
+  }
+  
+  .results-container img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .summary {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Reduzindo a margem inferior */
+    padding: 10px; /* Reduzindo o preenchimento interno */
+    border: 1px solid #ccc; /* Adicionando uma borda com 1px de largura e cor cinza */
+  }
+  
+  .summary-img {
+    width: 400; /* Reduzindo o tamanho da imagem */
+    margin-right: 20px;
+  }
+  
+  .summary-details {
+    flex: 1;
+  }
+  
+  .summary-details h3 {
+    margin: 0;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+  }
+  
+  .summary-details p {
+    margin: 0;
+    font-size: 1em;
+  }
+
+  
