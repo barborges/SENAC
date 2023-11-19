@@ -40,33 +40,48 @@ const placesDatabase = [
     initialPlacesDiv.style.display = 'none';
   }
   
-  function displayFeaturedPlaces() {
-    const featuredPlacesDiv = document.getElementById('featuredPlaces');
-    const pointsOfInterest = placesDatabase.filter(place => {
-      // Filtrar os locais em destaque que pertencem à categoria de pontos turísticos
-      return place.category === 'pontos_turisticos';
+ // ... (seu código existente)
+
+function displayFeaturedPlaces() {
+  const featuredPlacesDiv = document.getElementById('featuredPlaces');
+  const pointsOfInterest = placesDatabase.filter(place => {
+    // Filtrar os locais em destaque que pertencem à categoria de pontos turísticos
+    return place.category === 'pontos_turisticos';
+  });
+
+  pointsOfInterest.forEach(place => {
+    const placeDiv = document.createElement('div');
+    placeDiv.classList.add('place-item');
+
+    const img = document.createElement('img');
+    img.src = `images/${place.image}`;
+    img.alt = place.name;
+    placeDiv.appendChild(img);
+
+    const placeName = document.createElement('p');
+    placeName.textContent = place.name;
+    placeDiv.appendChild(placeName);
+
+    // Adicionar estilo do cursor ao passar o mouse sobre as imagens
+    placeDiv.addEventListener('mouseover', () => {
+      placeDiv.style.cursor = 'pointer';
     });
-  
-    pointsOfInterest.forEach(place => {
-      const placeDiv = document.createElement('div');
-      placeDiv.classList.add('place-item');
-  
-      const img = document.createElement('img');
-      img.src = `images/${place.image}`;
-      img.alt = place.name;
-      placeDiv.appendChild(img);
-  
-      const placeName = document.createElement('p');
-      placeName.textContent = place.name;
-      placeDiv.appendChild(placeName);
-  
-      placeDiv.addEventListener('click', () => {
-        displayPlacesByCategory(place.category);
-      });
-  
-      featuredPlacesDiv.appendChild(placeDiv);
+
+    // Remover estilo do cursor quando o mouse não estiver sobre as imagens
+    placeDiv.addEventListener('mouseout', () => {
+      placeDiv.style.cursor = 'default';
     });
-  }
+
+    placeDiv.addEventListener('click', () => {
+      displayPlacesByCategory(place.category);
+    });
+
+    featuredPlacesDiv.appendChild(placeDiv);
+  });
+}
+
+// ... (seu código existente)
+
   
   function search() {
     const searchInput = document.getElementById('searchInput');
@@ -135,4 +150,19 @@ const placesDatabase = [
   // Exibe os locais em destaque ao carregar a página
   window.onload = () => {
     displayFeaturedPlaces();
+    
+    // Adiciona um estilo ao cursor quando o passar sobre o título, indicando o seu atributo "clicável"
+    const mainTitle = document.getElementById('mainTitle');
+    mainTitle.addEventListener('mouseover', () => {
+      mainTitle.style.cursor = 'pointer';
+    });
+
+    // Remove o estilo quando o mouse não estiver sobre o título
+    mainTitle.addEventListener('mouseout', () => {
+      mainTitle.style.cursor = 'default';
+    });
   };
+
+  function reloadPage() {
+    location.reload();
+  }
